@@ -2,3 +2,8 @@ body {
   max-width: 1400px;
   margin: 0 auto;
 }
+
+.header {
+  background: url('img/header.jpg');
+  height: 715px;
+}
