@@ -24,7 +24,7 @@ body {
 }
 
 
-/* HEADER */
+/* Стили HEADER */
 .header {
   background: url('img/header.jpg');
   height: 715px;
@@ -69,6 +69,16 @@ body {
   color: #533738;
 }
 
+.header__link:hover {
+  font-weight: bold;
+  opacity: 0.8;
+  transform: scale(1.2);
+}
+
+.header__link:active {
+  transform: scale(0.9);
+}
+
 .header__number {
   font-size: 16px;
 
@@ -86,16 +96,33 @@ body {
   font-size: 18px;
 }
 
-.header__button {
+.button {
+  display: inline-block;
   font-weight: 500;
   font-size: 20px;
+  padding-top: 25px;
   width: 310px;
-  height: 74px;
+  height: 49px;
   background: #CC8B86;
   outline: none;
   border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
   color: #533738;
+  margin-top: 10px;
 }
+
+.button:hover {
+  box-shadow: 0 0 5px 5px #533738;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+
+/* Стили "О нас" */
 
 .about__title {
   text-align: center;
@@ -117,7 +144,7 @@ body {
   margin: 0;
 }
 
-.about__footer {
+.about__bottom {
   width: 100%;
   height: 273px;
   background: #8D7370;
@@ -139,39 +166,50 @@ body {
   line-height: 62px;
 }
 
+/* Стили "Наши работы" */
+
+.portfolio {
+  margin-top: 65px;
+
+}
+
 .portfolio__box {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  column-gap: 20px;
-  row-gap: 30px;
-  box-sizing: border-box;
 }
 
 .portfolio__item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  height: 451px;
+}
+
+.portfolio__item:nth-child(2n) {
+  margin-right: 0;
 }
 
 .portfolio__description {
   position: absolute;
-  display: none;
-  z-index: 1;
-  margin: 0;
+  opacity: 0;
   top: 0;
   left: 0;
   width: auto;
-  height: 86%;
+  height: inherit;
   background: rgba(100, 72, 69, 0.8);
+  transition: all 0.5s;
   padding: 0 35px;
-  padding-top: 60px;
 }
 
 .portfolio__subtitle {
   font-weight: 500;
   font-size: 30px;
-  line-height: 37px;
   text-align: center;
   color: #FFFFFF;
+  margin-top: 80px;
 }
 
 .portfolio__text {
@@ -181,5 +219,282 @@ body {
 }
 
 .portfolio__item:hover .portfolio__description {
+  opacity: 1;
+}
+
+.portfolio__arrow {
   display: block;
+  width: 224px;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 37px;
+  color: #533738;
+  margin: 0 auto;
+  padding-right: 70px;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.portfolio__arrow:hover {
+  transform: translateX(10px);
+  color: #8a484a;
+  opacity: 0.8;
+}
+
+.portfolio__arrow:active {
+  transform: scale(0.8);
+}
+
+
+.portfolio__arrow::before,
+.portfolio__arrow::after {
+  position: absolute;
+  content: "";
+  right: 0%;
+}
+
+.portfolio__arrow::before {
+  background: #533738;
+  width: 60px;
+  height: 2px;
+  top: 53%;
+}
+
+.portfolio__arrow::after {
+  top: 42%;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #533738;
+  border-right: 2px solid #533738;
+  transform: rotate(45deg);
+  border-radius: 10%;
+}
+
+/* Стили "Команда" и "Как мы работаем" */
+
+.works {
+  margin-top: 65px;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  background: #E2C4BA;
+}
+
+.works__title {
+  text-align: center;
+}
+
+.works__block {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  column-gap: 35px;
+}
+
+.works__description {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.works__acts {
+  display: grid;
+  grid-template-columns: repeat(4, 285px);
+  column-gap: 20px;
+
+}
+
+.works__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.works__point {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #8D7370;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 65px;
+  color: #FFFFFF;
+}
+
+.works__act {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+
+/* Стили "Отзывы" */
+
+.reviews__title {
+  text-align: center;
+}
+
+.reviews__wrapper {
+  width: 834px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.reviews__description {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.reviews__image {
+  margin-bottom: 20px;
+}
+
+.reviews__text:not(:first-child) {
+  margin-top: 30px;
+}
+
+.reviews__button-left,
+.reviews__button-right {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  background: #CC8B86;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  top: 40%;
+}
+
+.reviews__button-left:hover,
+.reviews__button-right:hover {
+  box-shadow: 0 0 5px 5px #E2C4BA;
+}
+
+.reviews__button-left:active,
+.reviews__button-right:active {
+  transform: scale(0.9);
+}
+
+.reviews__button-left {
+  left: -12%;
+}
+
+.reviews__button-right {
+  right: -12%;
+}
+
+.reviews__button-left::before,
+.reviews__button-right::before,
+.reviews__button-right::after,
+.reviews__button-left::after {
+  position: absolute;
+  content: '';
+}
+
+.reviews__button-left::before,
+.reviews__button-right::before {
+  background: #F5F2ED;
+  width: 32px;
+  height: 2px;
+  top: 50%;
+  left: 30%;
+}
+
+.reviews__button-right:after {
+  top: 45%;
+  right: 25%;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #F5F2ED;
+  border-right: 2px solid #F5F2ED;
+  transform: rotate(45deg);
+  border-radius: 10%;
+}
+
+.reviews__button-left::after {
+  top: 44%;
+  left: 30%;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #F5F2ED;
+  border-right: 2px solid #F5F2ED;
+  transform: rotate(225deg);
+}
+
+
+/* Стили "Оставить заявку" */
+
+
+.request {
+  background: #8D7370;
+  width: auto;
+}
+
+.request__block {
+
+  display: flex;
+  gap: 20px;
+  height: 624px;
+}
+
+
+.request__title {
+  color: #FFFFFF;
+  padding-top: 30px;
+}
+
+.request__description {
+  font-size: 18px;
+  line-height: 30px;
+  color: #FFFFFF;
+  opacity: 0.6;
+}
+
+.request__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.request__input {
+  font-size: 18px;
+  line-height: 30px;
+  background: #8D7370;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #FFFFFF;
+  width: 508px;
+  padding-bottom: 8px;
+  color: #F6EDE9;
+}
+
+.request__input::placeholder {
+  color: #F6EDE9;
+}
+
+.request__btn {
+  height: 74px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+/* Стили FOOTER */
+
+.footer {
+  margin: 20px 0;
+
+}
+
+.footer__description {
+  display: flex;
+  gap: 42px;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.footer__name {
+  margin-left: auto;
 }
