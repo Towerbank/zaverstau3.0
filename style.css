@@ -21,6 +21,7 @@ body {
 .title-h2 {
   font-size: 40px;
   text-transform: uppercase;
+  font-weight: 400;
 }
 
 
@@ -90,6 +91,7 @@ body {
 
 .header__title {
   font-size: 50px;
+  font-weight: 400;
 }
 
 .header__description {
