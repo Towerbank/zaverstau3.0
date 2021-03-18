@@ -477,6 +477,12 @@ body {
   color: #F6EDE9;
 }
 
+.request__input:focus {
+  border-bottom: 2px solid #ff6e6e;
+  padding-bottom: 0;
+  margin-top: 7px;
+}
+
 .request__btn {
   height: 74px;
   margin-top: 20px;
